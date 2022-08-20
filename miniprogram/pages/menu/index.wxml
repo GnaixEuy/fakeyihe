@@ -1,0 +1,43 @@
+<view class="header" style="{{ headerStyle }}">
+  <image class="back-icon" bindtap="switchCurrentStore" src="../../assets/icons/arrow-left.svg"></image>
+  <view class="search-input">
+    <image class="search-icon" src="../../assets/icons/search.svg"></image>
+    <input placeholder="请输入商品名" />
+  </view>
+</view>
+
+<view class="menu-info">
+  <view class="store-info">
+        <view class="store-name" bindtap="switchCurrentStore">
+          {{ currentStore.name }}
+          <image src="../../assets/icons/arrow-right.svg"></image>
+        </view>
+        <view class="store-location">
+          <image class="location-icon" src="../../assets/icons/location.svg"></image>
+          <view class="distance-info">
+            距离您 <view style="color: yellowgreen; margin-left: 4rpx">{{ currentStore.distance }}</view>  km
+          </view>
+        </view>
+  </view>
+
+  <view class="trade-type" bindtap="onAccessTypeChange">
+    {{accessType}}
+  </view>
+</view>
+
+<view class="menu">
+  <sidebar list="{{ goodsList }}" bind:on-change="onSideBarChange" defaultCurrent="{{ sidebarCurrent }}"></sidebar>
+  <goods-list list="{{ goodsList }}" current="{{ currentCategoryIndex }}" bind:on-change="onGoodsListChange" bind:on-selected="onGoodsSelected">
+  <view slot="before">
+    <force-swiper
+    list="{{ swiperList }}"
+    ></force-swiper>
+  </view>
+  </goods-list>
+</view>
+<cart-bar data-chart="{{needPay}}" ></cart-bar>
+<dialog show="{{ goodsDialogShow }}">
+   <goods-detail bind:on-addGoods="addGoods"  goods="{{ selectedGoods }}"></goods-detail>
+</dialog>
+
+

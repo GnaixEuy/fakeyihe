@@ -1,0 +1,46 @@
+<view class="goods-detail">
+  <view class="goods-info">
+    <block wx:for="{{goods.image}}" wx:key="index">
+      <image class="goods-cover" src="http://localhost:1337{{ item.url }}" mode="aspectFit"></image>
+    </block>
+    <view class="meta">
+      <view class="title">{{ goods.name }}</view>
+      <view class="description">{{ goods.desc }}</view>
+    </view>
+  </view>
+  <view class="specs-area">
+    <view class="specs-category" wx:if="{{goods.milk.length > 0}}">
+      <view class="label">加奶</view>
+      <view class="specs-list">
+        <view class="specs {{ selectedMilk == index ? 'selected' : '' }}" bindtap="onMilkSelected" wx:for="{{goods.milk}}" wx:key="index" data-index="{{index}}">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+    <view class="specs-category">
+      <view class="label">温度</view>
+      <view class="specs-list">
+        <view wx:for="{{temperatureList}}" wx:key="item" class="specs {{ selectedTemperature == item ? 'selected' : '' }}" bindtap="onTemperatureSelected" data-selected="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view class="specs-category">
+      <view class="label">甜度</view>
+      <view class="specs-list">
+        <view wx:for="{{sweetnessList}}" wx:key="item" class="specs {{ selectedSweetness == item ? 'selected' : '' }}" bindtap="onSweetnessSelected" data-selected="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-area">
+    <view class="price">
+      <view class="unit">￥</view>
+      {{ goods.price }}
+    </view>
+    <view class="cart-btn" bindtap="add2ShoppingCart" data-goods="{{goods}}">加入购物车</view>
+  </view>
+
+</view>

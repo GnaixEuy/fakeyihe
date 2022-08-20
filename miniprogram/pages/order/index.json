@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tabs-green-center": "../../components/tabs-green-center/index"
+  },
+  "navigationBarTitleText": "我的订单" 
+}

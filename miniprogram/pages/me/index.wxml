@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="user-area" wx:if="{{!user.nickName}}">
+    <view class="user-box" >
+      <image class="avatar" src="../../assets/images/vip-pic.png"></image>
+      <view class="name">登录获得更多会员权益</view>
+    </view>
+    <view  class="login-btn" bindtap="getUserProfile">授权登录</view>
+  </view>
+  <view class="user-area" wx:if="{{user.nickName}}">
+    <view class="user-box" >
+      <image class="avatar" src="{{user.avatarUrl}}"></image>
+      <view class="name">{{ user.nickName}}</view>
+    </view>
+  </view>
+  <view class="card-container">
+    <view class="card">
+      <view class="meta">
+        <view class="count">54</view>
+        <view class="name">积分</view>
+      </view>
+      <image class="icon" src="../../assets/images/me-coin.png"></image>
+    </view>
+    <view class="card">
+      <view class="meta">
+        <view class="count">54</view>
+        <view class="name">优惠券</view>
+      </view>
+      <image class="icon" src="../../assets/images/me-coupon.png"></image>
+    </view>
+  </view>
+
+  <view class="list-items">
+    <view class="item">
+         <view class="content">
+          <image class="icon" src="../../assets/images/qr-code.png"></image>
+          <view class="label">兑换码</view>
+         </view>
+         <view class="left-arrow">></view>
+    </view>
+    <view class="item" bindtap="gotoCustomPage" data-code="privacy">
+         <view class="content">
+          <image class="icon" src="../../assets/images/lock.png"></image>
+          <view class="label"  >隐私政策</view>
+         </view>
+         <view class="left-arrow">></view>
+    </view>
+    <view class="item"  bindtap="gotoCustomPage" data-code="agreement">
+         <view class="content">
+          <image class="icon" src="../../assets/images/paper.png"></image>
+          <view class="label">用户协议</view>
+         </view>
+         <view class="left-arrow">></view>
+    </view>
+    <view class="item" bindtap="gotoCustomPage" data-code="xuke">
+         <view class="content">
+          <image class="icon" src="../../assets/images/xuke.png"></image>
+          <view class="label">经营信息公示</view>
+         </view>
+         <view class="left-arrow">></view>
+    </view>
+  </view>
+
+  <view class="list-items app-download">
+    <view class="item">
+         <view class="content">
+          <image class="icon app-icon" src="../../assets/images/vip-pic.png"></image>
+          <view class="label">益禾堂APP</view>
+         </view>
+         <view class="left-arrow">
+          <view class="tips">下载APP体验更佳</view>
+          >
+         </view>
+    </view>
+    </view>
+
+</view>

@@ -1,0 +1,22 @@
+<scroll-view id="menu-list" class="menu-list" scroll-into-view="section-{{ current }}" bindscroll="onScroll" scroll-y show-scrollbar="{{ false }}" enhanced>
+    <slot name="before"></slot>
+    <view class="list">
+      <view class="section" id="section-{{ index }}" data-index="{{ index }}">
+        <view class="section-list">
+          <view class="item" wx:for="{{  list[current].menus }}" wx:key="unique" wx:for-item="goods">
+          <block wx:for="{{goods.image}}" wx:for-item="img" wx:key="Imgindex">
+            <image bindtap="remove" src="http://localhost:1337{{ img.url }}" mode="aspectFit"></image>
+          </block>  
+            <view class="info">
+              <view class="name">{{ goods.name }}</view>
+              <view class="description">{{ goods.desc }}</view>
+              <view class="price">￥{{ goods.price }}</view>
+            </view>
+            <view class="add-icon" bindtap="selectGoods" data-goods="{{ goods }}" >
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>

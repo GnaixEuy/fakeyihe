@@ -1,0 +1,8 @@
+<view class="page">
+  <image class="logo" src="../../assets/images/vip-pic.png"></image>
+  <view class="logo-title">益禾堂</view>
+  <view class="intro">成为会员，立享更多优惠福利</view>
+  <view class="login-tip">授权绑定手机号 为您提供更好的服务</view>
+  <button open-type="getPhoneNumber" class="login-btn" bindgetphonenumber="login" bindtap="getUserProfile" >一键登录</button>
+  <view class="cancel" bindtap="cancelLogin">取消</view>
+</view>

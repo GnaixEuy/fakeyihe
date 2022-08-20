@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="header">
+    <tabs-green-center tabs="{{ [{ value: 'noworder', label: '当前订单' }, {value: 'historyorder', label: '历史订单'}] }}"></tabs-green-center>
+  </view>
+  <view class="container">
+    <scroll-view>
+      <view class="banner-list">
+        <view class="banner" wx:for="{{orderList}}" wx:key="index">
+          <view class="banner-item-title">厦门集美诚毅学院校内店</view>
+          <view class="banner-item-status">已完成</view>
+          <view class="banner-item-take">打包</view>
+          <image class="banner-item-image" mode="aspectFit" src="http://localhost:1337{{item.imgUrl}}"></image>
+          <view class="banner-item-name">{{item.menu_name}}</view>
+          <view class="banner-item-desc">7分糖/{{item.size == 0 ? '中杯' : '大杯'}}/<block wx:for="{{item.milk_option}}">{{item}}</block></view>
+          <view class="banner-item-price">¥ 13</view>
+          <view class="banner-item-num">共1件</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

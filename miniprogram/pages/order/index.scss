@@ -1,0 +1,114 @@
+@import '../../style/theme.scss';
+
+.container {
+
+  width: 100%;
+  height: 100%;
+  margin-top: 5rpx;
+  background-color: rgb(252, 252, 252);
+
+  .banner-list {
+
+    display: block;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20rpx;
+
+    .banner {
+
+      display: block;
+      align-content: center;
+      width: 98%;
+      height: 350rpx;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 16rpx;
+      margin-top: 30rpx;
+
+      .banner-item-title {
+        margin-top: 3%;
+        position: absolute;
+        text-align: left;
+        margin-left: 30rpx;
+        font-weight: 550;
+        font-size: 28rpx;
+      }
+
+      .banner-item-status {
+        margin-top: 3%;
+        padding-top: 30rpx;
+        padding-right: 30rpx;
+        // position: absolute;
+        text-align: right;
+        // margin-left: 75%;
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 25rpx;
+      }
+
+      .banner-item-take {
+        margin-top: 15rpx;
+        margin-bottom: 0rpx;;
+        text-align: center;
+        margin-left: 4%;
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 25rpx;
+        border-color: $primary-color;
+        border-radius: 10rpx;
+        width: 60rpx;
+        border-style: solid;
+        border-width: 1rpx;
+      }
+
+      .banner-item-image {
+        margin-left: 30rpx;
+        // margin-top: 15rpx;
+        width: 150rpx;
+        height: 200rpx;
+        border-radius: 55rpx;
+      }
+
+      .banner-item-name {
+        display: inline;
+        position: absolute;
+        font-size: 25rpx;
+        font-weight: 400;
+        color: black;
+        margin-top: 45rpx;
+        margin-left: 15rpx;
+      }
+
+      .banner-item-desc {
+        display: inline;
+        position: absolute;
+        font-size: 22rpx;
+        color: #777777;
+        margin-top: 95rpx;
+        margin-left: 15rpx;
+      }
+
+      .banner-item-price {
+        display: inline;
+        position: absolute;
+        font-weight: 600;
+        text-align: right;
+        margin-top: 40rpx;
+        margin-left: 50%;
+      }
+
+      .banner-item-num {
+        display: inline;
+        position: absolute;
+        font-size: 22rpx;
+        text-align: right;
+        margin-top: 80rpx;
+        margin-left: 50%;
+        color: #777777;
+      }
+    }
+  }
+
+}
